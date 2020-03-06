@@ -3,14 +3,13 @@ import { OnInit } from '@angular/core';
 
 export class HeroComponent implements OnInit {
 
-  heroList: any[];
+  heroList: any;
   message: string;
 
-  constructor(private heroService: HeroService ) {
-  }
+  constructor(private heroService: HeroService ) {}
 
   ngOnInit() {
-    this.heroService.getHeroes().subscribe((res: any) => {
+    this.heroService.getHeroes().subscribe((res) => {
       this.heroList = res;
     });
   }
