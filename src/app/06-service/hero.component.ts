@@ -3,7 +3,7 @@ import { OnInit } from '@angular/core';
 
 export class HeroComponent implements OnInit {
 
-  heroList: any;
+  heroList: any = [];
   message: string;
 
   constructor(private heroService: HeroService ) {}
@@ -28,9 +28,6 @@ export class HeroComponent implements OnInit {
     if ( confirm('Are you sure to delete?')) {
       this.heroService.deleteHero(id);
     }
-
   }
-
-
 
 }
